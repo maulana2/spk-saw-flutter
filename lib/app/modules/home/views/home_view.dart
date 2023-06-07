@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:spk_apk/app/models/nilai_models.dart';
+import 'package:spk_apk/app/routes/app_pages.dart';
 import 'package:spk_apk/app/shared/style.dart';
 import 'package:spk_apk/app/widgets/custom_input_nilai_widget.dart';
 
@@ -53,7 +54,7 @@ class HomeView extends GetView<HomeController> {
                         ),
                         ListView.builder(
                           shrinkWrap: true,
-                          physics: NeverScrollableScrollPhysics(),
+                          physics: const NeverScrollableScrollPhysics(),
                           itemCount: controller.nilai.length,
                           itemBuilder: (context, index) {
                             return Container(
@@ -138,7 +139,27 @@ class HomeView extends GetView<HomeController> {
                       ],
                     ),
                   )
-                : SizedBox())
+                : const SizedBox()),
+            Container(
+              margin: const EdgeInsets.only(top: 15),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    )),
+                onPressed: () {
+                  Get.toNamed(Routes.REKOMENDASI,
+                      arguments: controller.listJurusan);
+                },
+                child: const Text(
+                  'Lihat Rekomendasi',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -157,7 +178,7 @@ _alert() {
         color: Colors.grey,
       ),
       boxShadow: [
-        BoxShadow(
+        const BoxShadow(
             blurRadius: 4,
             color: Color.fromRGBO(0, 0, 0, 0.25),
             offset: Offset(0, 4))
@@ -220,25 +241,27 @@ _openDialog(HomeController controller) {
       fontSize: 15.px,
     ),
     title: 'Masukan nilai sekolah',
-    content: Column(
-      children: [
-        CustomInputNilai(
-          controller: controller.matematikaC,
-          title: "Matematika",
-        ),
-        CustomInputNilai(
-          controller: controller.bInggrisC,
-          title: "Bahasa Inggris",
-        ),
-        CustomInputNilai(
-          controller: controller.ipaC,
-          title: "IPA",
-        ),
-        CustomInputNilai(
-          controller: controller.ipsC,
-          title: "IPS",
-        ),
-      ],
+    content: Container(
+      child: Column(
+        children: [
+          CustomInputNilai(
+            controller: controller.matematikaC,
+            title: "Matematika",
+          ),
+          CustomInputNilai(
+            controller: controller.bInggrisC,
+            title: "Bahasa Inggris",
+          ),
+          CustomInputNilai(
+            controller: controller.ipaC,
+            title: "IPA",
+          ),
+          CustomInputNilai(
+            controller: controller.ipsC,
+            title: "IPS",
+          ),
+        ],
+      ),
     ),
     confirm: ElevatedButton(
       style: ElevatedButton.styleFrom(
@@ -251,6 +274,8 @@ _openDialog(HomeController controller) {
         if (isEmpty == false) {
           //jalanin function add nilai
           controller.addNilai();
+          controller.searchMinMaxMean();
+          controller.calculateNormalisasi();
           print(controller.nilai.length);
           Get.back();
           Get.snackbar(
@@ -285,7 +310,7 @@ _buttonTambahNilai(HomeController controller) {
     ),
     child: Row(
       children: [
-        Icon(
+        const Icon(
           Icons.add,
           color: Colors.white,
         ),

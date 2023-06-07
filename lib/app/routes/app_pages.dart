@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/rekomendasi/bindings/rekomendasi_binding.dart';
+import '../modules/rekomendasi/views/rekomendasi_view.dart';
 import '../modules/splashscreen/bindings/splashscreen_binding.dart';
 import '../modules/splashscreen/views/splashscreen_view.dart';
 
@@ -22,6 +24,11 @@ class AppPages {
       name: _Paths.SPLASHSCREEN,
       page: () => const SplashscreenView(),
       binding: SplashscreenBinding(),
+    ),
+    GetPage(
+      name: _Paths.REKOMENDASI,
+      page: () => RekomendasiView(),
+      binding: RekomendasiBinding(),
     ),
   ];
 }
