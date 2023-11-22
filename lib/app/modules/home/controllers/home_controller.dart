@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:spk_apk/app/config/list_jurusan.dart';
 import 'package:spk_apk/app/models/jurusan_models.dart';
 import 'package:spk_apk/app/models/nilai_models.dart';
 import 'package:spk_apk/app/shared/style.dart';
@@ -26,36 +27,7 @@ class HomeController extends GetxController {
   double maxIpa = 0;
   double minIps = double.infinity;
   double maxIps = 0;
-  List<Jurusan> listJurusan = [
-    Jurusan(
-        kode: 1,
-        namaJurusan: 'Teknik Informatika',
-        mtk: 0.3,
-        binggris: 0.25,
-        ips: 0.15,
-        ipa: 0.3),
-    Jurusan(
-        kode: 2,
-        namaJurusan: 'Manajemen Bisnis',
-        mtk: 0.2,
-        binggris: 0.25,
-        ips: 0.35,
-        ipa: 0.2),
-    Jurusan(
-        kode: 3,
-        namaJurusan: 'Arsitektur',
-        mtk: 0.25,
-        binggris: 0.2,
-        ips: 0.3,
-        ipa: 0.25),
-    Jurusan(
-        kode: 4,
-        namaJurusan: 'Manajemen',
-        mtk: 0.25,
-        binggris: 0.2,
-        ips: 0.3,
-        ipa: 0.25),
-  ];
+  List<Jurusan> listJurusan = daftarJurusan;
   addNilai() {
     try {
       double matematika = double.parse(matematikaC.text);

@@ -9,10 +9,10 @@ class SplashscreenController extends GetxController {
       'Pilih minat dan jurusanmu, Untuk masa depan yang lebih baik'.obs;
   @override
   void onInit() async {
-    // Future.delayed(
-    //   Duration(seconds: 5),
-    //   () => Get.offAndToNamed(Routes.HOME),
-    // );
+    Future.delayed(
+      Duration(seconds: 5),
+      () => Get.offAndToNamed(Routes.HOME),
+    );
 
     super.onInit();
   }

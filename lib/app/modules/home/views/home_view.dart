@@ -149,8 +149,11 @@ class HomeView extends GetView<HomeController> {
                       borderRadius: BorderRadius.circular(12),
                     )),
                 onPressed: () {
-                  Get.toNamed(Routes.REKOMENDASI,
-                      arguments: controller.listJurusan);
+                  bool isEmpty = controller.checkNilaiKosong();
+                  if (isEmpty != true) {
+                    Get.toNamed(Routes.REKOMENDASI,
+                        arguments: controller.listJurusan);
+                  }
                 },
                 child: const Text(
                   'Lihat Rekomendasi',
