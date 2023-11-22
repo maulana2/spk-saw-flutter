@@ -1,4 +1,4 @@
-com.example.spk_apk
+com.akademik.advisor
 attr activityAction
 attr activityName
 attr alpha

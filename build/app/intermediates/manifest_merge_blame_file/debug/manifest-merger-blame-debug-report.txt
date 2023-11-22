@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.example.spk_apk"
+3    package="com.akademik.advisor"
 4    android:versionCode="1"
 5    android:versionName="1.0.0" >
 6
@@ -22,9 +22,9 @@
 19-->[androidx.core:core:1.6.0] /Users/dsidev/.gradle/caches/transforms-3/4ca28c4a71705f8a687c69dda140a277/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
 20        android:debuggable="true"
 21        android:icon="@mipmap/launcher_icon"
-22        android:label="spk_apk" >
+22        android:label="Akademik Advisor" >
 23        <activity
-24            android:name="com.example.spk_apk.MainActivity"
+24            android:name="com.akademik.advisor.MainActivity"
 25            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
 26            android:exported="true"
 27            android:hardwareAccelerated="true"

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.spk_apk.app-mergeDebugResources-9:/values/values.xml",
+            "outputFile": "com.akademik.advisor.app-mergeDebugResources-9:/values/values.xml",
             "map": [
                 {
                     "source": "/Users/dsidev/Desktop/spk-saw-flutter/android/app/src/main/res/values/styles.xml",
