@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.spk_apk">
+    package="com.akademik.advisor">
    <application
-        android:label="spk_apk"
+        android:label="Akademik Advisor"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
