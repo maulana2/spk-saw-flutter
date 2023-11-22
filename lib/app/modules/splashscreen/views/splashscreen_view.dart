@@ -21,15 +21,19 @@ class SplashscreenView extends GetView<SplashscreenController> {
               alignment: Alignment.center,
               child: Container(
                 margin: EdgeInsets.only(bottom: 10.px),
-                height: 120.px,
-                width: 120.px,
+                height: 100.px,
+                width: 100.px,
                 decoration: BoxDecoration(
+                  image: const DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage('assets/images/logo.png')),
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(12.px),
                 ),
               ),
             ),
             Text(
+              textAlign: TextAlign.center,
               controller.welcome.string,
               style: GoogleFonts.abel(
                 color: Colors.white,
