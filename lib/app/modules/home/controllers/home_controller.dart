@@ -165,9 +165,9 @@ class HomeController extends GetxController {
   }
 
   bool checkNilaiKosong() {
-    if (matematikaC.text.isEmpty &&
-        bInggrisC.text.isEmpty &&
-        ipaC.text.isEmpty &&
+    if (matematikaC.text.isEmpty ||
+        bInggrisC.text.isEmpty ||
+        ipaC.text.isEmpty ||
         ipsC.text.isEmpty) {
       Get.defaultDialog(
         content: SizedBox(),
